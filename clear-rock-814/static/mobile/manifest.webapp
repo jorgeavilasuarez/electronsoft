@@ -1,0 +1,45 @@
+﻿{
+  "version": "0.4",
+  "name": "MarketPlay",   
+  "description": "with Gotenks adventure you will enjoy fighting monsters eliminating evil enemies. You'll be spending a lot of action and fun levels good luck!",
+  "launch_path": "/index.html",
+  "icons": {
+    "22": "/icons/tyrian-22.png",
+    "24": "/icons/tyrian-24.png",
+    "32": "/icons/tyrian-32.png",
+	"48": "/icons/tyrian-48.png",
+    "60": "/icons/tyrian-60.png",        
+    "128": "/icons/tyrian-128.png"    
+  },  
+  "type": "web",
+  "permissions": {    
+    "audio-channel-content":{
+		"description":"Use the audio channel for the music player"
+	},
+    "audio-channel-normal":{
+		"description":"Use the audio channel for the music player"
+	}    
+  },  
+  "orientation": "portrait-primary",
+  "fullscreen": "true",
+  "developer": {
+    "name": "Asikersoft",
+    "url": "https://www.facebook.com/asikergames"
+  },
+  "installs_allowed_from": ["*"],  
+  "locales": {
+    "es": {
+      "description": " con Gotenks disfrutaras de toda  aventura eliminando monstruos  lucha contra los enemigos malignos. Usted tendrá que pasar  niveles mucha accion y diversion  buena suerte!",
+      "developer": {
+        "url": "https://www.facebook.com/asikergames"
+      }
+    },
+    "en": {
+      "description": "with Gotenks adventure you will enjoy fighting monsters eliminating evil enemies. You'll be spending a lot of action and fun levels good luck!",
+      "developer": {
+        "url": "https://www.facebook.com/asikergames"
+      }
+    }
+  },
+  "default_locale": "en"
+}

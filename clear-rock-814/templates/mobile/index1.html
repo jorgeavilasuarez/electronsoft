@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html lang="en" > 
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <meta name="description" content="" /> 
+        <meta name="keywords" content="" /> 
+        <meta name="author" content="electronsoft" /> 
+        <meta name="apple-mobile-web-app-capable" content="yes" />        
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" /> 
+<title>electronsoft</title>
+</head> 
+    <body>
+    {% for item in model.objects %}
+    <span>{{ item.name["en-US"] }}</span>
+    <img onclick="install(this);" data-package_path="{{ item.package_path }}" data-manifest="{{ item.manifest_url }}" src="{{ item.previews[0].thumbnail_url }}"></img>
+    {% endfor %}
+    <script type="text/javascript">
+	
+         //window.location = "/static/site/index.html";
+		 function install(obj){
+		 debugger;
+		 if( window.navigator.mozApps !== "undefined"){
+		 if(obj.dataset.package_path === ""){		 
+		    window.navigator.mozApps.install(obj.dataset.manifest);
+		}else{
+		//window.navigator.mozApps.install(obj.dataset.manifest);
+		DOMApplicationsRegistry.installPackage(obj.dataset.package_path);
+		}
+			}
+		 }
+   </script>
+    </body> 
+</html>
+
+

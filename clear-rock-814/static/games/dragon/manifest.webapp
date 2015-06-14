@@ -1,0 +1,49 @@
+{
+  "version": "0.1",
+  "name": "dragon",   
+  "description": "enjoy an adventure with dragon several levels with different ways to pass and come and live successfully, more adventures soon more levels",
+  "launch_path": "/static/games/dragon/index.html",
+  "appcache_path": "/static/games/dragon/manifest.appcache",
+  "icons": {
+    "16": "http://electronsoft.com/static/games/dragon/icons/logo16.png",
+    "32": "http://electronsoft.com/static/games/dragon/icons/logo32.png",
+    "48": "http://electronsoft.com/static/games/dragon/icons/logo48.png",
+    "60": "http://electronsoft.com/static/games/dragon/icons/logo60.png",
+    "64": "http://electronsoft.com/static/games/dragon/icons/logo64.png",
+    "90": "http://electronsoft.com/static/games/dragon/icons/logo90.png",
+    "128": "http://electronsoft.com/static/games/dragon/icons/logo128.png",
+    "256": "http://electronsoft.com/static/games/dragon/icons/logo256.png",    
+    "512": "http://electronsoft.com/static/games/dragon/icons/logo512.png"
+  },  
+  "type": "web",
+  "permissions": {    
+    "audio-channel-content":{
+		"description":"Use the audio channel for the music player"
+	},
+    "audio-channel-normal":{
+		"description":"Use the audio channel for the music player"
+	}    
+  },  
+  "orientation": "landscape-primary",
+  "fullscreen": "true",
+  "developer": {
+    "name": "Electronsoft",
+    "url": "https://www.electronsoft.com"
+  },
+  "installs_allowed_from": ["*"],  
+  "locales": {
+    "es": {
+      "description": "disfruta toda  una aventura con dragon  ,varios niveles con diferentes maneras de pasar y llegar  con exito y con vida, muy pronto mas aventuras mas niveles ",
+      "developer": {
+        "url": "https://www.electronsoft.com"
+      }
+    },
+    "en": {
+      "description": "enjoy an adventure with dragon several levels with different ways to pass and come and live successfully, more adventures soon more levels",
+      "developer": {
+        "url": "https://www.electronsoft.com"
+      }
+    }
+  },
+  "default_locale": "en"
+}

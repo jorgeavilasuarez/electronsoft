@@ -1,0 +1,679 @@
+<!DOCTYPE html> 
+<html lang="en" manifest="manifest.appcache">     
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <meta name="description" content="" /> 
+        <meta name="keywords" content="" /> 
+        <meta name="author" content="electronsoft" /> 
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />         
+        <title>save planet</title>
+        <link type="text/css" href="style/reset.css" rel="stylesheet" media="screen" /> 
+        <link type="text/css" href="style/main.css" rel="stylesheet" media="screen" /> 
+    
+          <!---
+
+          DANGER!!!
+
+
+        __author__ = "electronsoft.com"
+        __copyright__ = "Copyright 2015,"
+        __license__ = "Affero GPL"
+        __version__ = "1.0.1"
+        __maintainer__ = "team electronsoft"
+        __contact__ = "electronsoft.com"
+        __status__ = "Production"
+
+        
+        --->
+        
+        
+       <style>
+           
+    #splashlogocompany
+    {
+
+
+    display:block;
+    z-index:99999;
+     position: fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%; 
+    background-size:     100% 100%,
+                            0px 0px,
+                             auto auto ;          
+          background-image:url("images/2.gif");
+          background-repeat:no-repeat;
+
+    }
+
+    #gamescreen
+    {
+
+    display:none;
+
+    }
+        </style>
+        
+        <script type="text/javascript">
+             var  splashlogo = setInterval(function () {
+    
+    
+    
+gamescreen.style.display = "block";
+   
+  splashlogocompany.style.display = "none";
+  
+  //sound1.src="images/intro.ogg";
+    
+golpeshield.play();
+     clearInterval(splashlogo);
+
+    }, 3000);
+        
+        
+         var  gamescreenstart = setInterval(function () {
+    
+        sound1.src="";
+        
+        
+         var introc24 = setInterval(function () {
+           
+           
+         
+        golpeshield.play();
+            clearInterval(introc24);
+        }, 3100);
+        
+         var introc25 = setInterval(function () {
+              sound1.src="images/soundmenu2.ogg";
+          sound1.play();
+             
+         // pantaprincipal.style.backgroundSize ="500px 100%";
+   
+            pantaprincipal.style.backgroundSize = "100% 100%,0px 0px ,auto,auto";
+            pantaprincipal.style.backgroundImage = "url(images/intro2.gif)";
+            pantaprincipal.style.backgroundRepeat = "no-repeat";
+           
+          // pantaprincipalcortina.style.display = "none";
+            clearInterval(introc25);
+        }, 4000);
+        
+         var introc26 = setInterval(function () {
+          pantaprincipal.style.display = "none";
+           game.style.left = "0px";
+           
+           pantabun.style.display = "block";
+              player1.style.left = "30%";
+           
+            clearInterval(introc26);
+        }, 7000);
+        
+          var introc27 = setInterval(function () {
+       
+           pantabun.style.display = "none";
+           
+           pantaactor2.style.left = "50%";      
+            clearInterval(introc27);
+        }, 8500);
+        
+        
+          var introc28 = setInterval(function () {
+       
+         // player1.style.left = "150%";
+           pantaactor3.style.left = "150%";
+           pantaactor2.style.top = "-150%";
+           
+   pantaprincipalcortina.style.display = "none";
+            clearInterval(introc28);
+        }, 9500);
+             
+             
+               clearInterval(gamescreenstart);
+        },3100);
+        
+        
+        
+        </script>
+    </head> 
+    <body>
+    <audio preload="true" id="sound1" autoplay="autoplay" loop="loop" >
+    <source src="images/electronsoft.mp3" />
+</audio>
+
+<audio preload="true" id="go"  >
+    <source src="images/go.ogg" />
+</audio>
+<audio preload="true" id="lazerdeath"  >
+    <source src="images/lazerdeath.mp3" />
+</audio>
+
+<!--golpe enemigo---->
+<audio preload="true" id="stopdeath"  >
+    <source src="images/stopdeath.mp3" />
+</audio>
+<!--golpe enemigo---->
+<audio preload="true" id="golpeshield"  >
+    <source src="images/golpeshield.mp3" />
+</audio>
+
+
+
+<div id="splashlogocompany" >
+
+  </div>
+
+<div id="gamescreen">
+ 
+
+    <div id="pantaprincipalcortina" style='display:block; position:fixed;width:100%; height:100%;top:0px;left:0px;z-index:9999;
+      
+   
+  background-image:url("images/overlay.png");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+     
+   
+       '> 
+      
+       </div>
+
+    
+       
+           <div id="pantaprincipal" style='display:block; position:fixed;width:100%; height:100%;top:0px;left:0px;z-index:999;
+     
+   
+  background-image:url("images/intro.gif");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+     
+   
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       </div>
+       
+       
+          <div id="pantabun" style='display:none; position:fixed;width:100%; height:100%;top:0px;left:0px;z-index:999;
+     
+    opacity:0.1;
+  background-image:url("images/gameover2.gif");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       </div>
+       
+        <!--    moustrou huevo fuego botar  -->
+         <div id="pantaactor1" style='display:block; position:fixed;width:100%; height:100%;top:0px;left:110%;
+     z-index:1;
+     opacity:0.3;
+   
+  background-image:url("images/neblina.gif");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+      
+       '> 
+       
+       </div>
+         <div id="pantaactor112" style='display:block; position:fixed;width:100%; height:100%;top:0px;left:0%;
+     z-index:2;
+
+   
+  background-image:url("images/overlay.png");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+      /*
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);    */       
+      opacity:0.6;
+       '> 
+       
+       </div>
+       
+       
+       
+              <!--    moustrou huevo fuego botar  -->
+         <div id="pantagameover" style='display:none; position:fixed;width:100%; height:100%;top:0px;left:0%;
+     z-index:5;
+   
+  background-image:url("images/gameover2.gif");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       </div>
+       
+          <div id="pantagameover0" style='display:none; position:fixed;width:100%; height:100%;top:0px;left:0%;
+     z-index:9;
+   
+  background-image:url("images/gameover2.gif");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       </div>
+       <div id="transportelevel" style='display:none; position:fixed;width:100%; height:100%;top:0px;left:-110%;
+     z-index:2;
+  
+  background-image:url("images/hud1.gif");/*actor1*/
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       </div>
+      
+         <div id="pantaactor1avioneta" style='display:none; position:fixed;width:640px; height:80px;top:0px;left:0px;z-index:999;
+     z-index:2;
+  
+  background-image:url("images/nave11.gif");/*actor1*/
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       </div>
+       
+       
+       
+       
+            <div id="player1" style='display:none; position:fixed;width:40%; height:40%;top:60%;left:-130%;
+     z-index:1;
+   
+  background-image:url("images/hud1.gif");/*actor1*/
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       </div>
+       
+       
+        
+       
+       
+       
+       
+       
+        <div id="pantaactor2" style='display:block; position:fixed;width:200px; height:205px;top:40%;left:-110%;
+     z-index:1;
+   
+  background-image:url("images/hud1.gif");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       </div>
+       
+       
+       <div id="pantaactor3" style='display:block; position:fixed;width:200px; height:205px;top:40%;left:-110%;
+     z-index:1;
+   
+  background-image:url("images/hud1.gif");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 5s ease-in-out;
+   -moz-transition: all 5s ease-in-out;
+   -o-transition: all 5s ease-in-out;
+   -ms-transition: all 5s ease-in-out;
+   transition: all 5s ease-in-out;
+       '> 
+       </div>
+       
+       
+        <div id="hud1" style='display:block; position:fixed;width:200px; height:205px;top:40%;left:-110%;z-index:999;
+     z-index:1;
+                              
+   
+  background-image:url("images/hud1.gif");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+       -webkit-transition: all 5s ease-in-out;
+   -moz-transition: all 5s ease-in-out;
+   -o-transition: all 5s ease-in-out;
+   -ms-transition: all 5s ease-in-out;
+   transition: all 5s ease-in-out;
+       '> 
+       
+       </div>
+       
+       
+           <div id="hud2" style='display:block; position:fixed;width:200px; height:205px;top:60%;left:-110%;z-index:999;
+     z-index:1;
+   opacity:0.9;
+  background-image:url("images/hud1.gif");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 5s ease-in-out;
+   -moz-transition: all 5s ease-in-out;
+   -o-transition: all 5s ease-in-out;
+   -ms-transition: all 5s ease-in-out;
+   transition: all 5s ease-in-out;
+       '> 
+       
+       </div>
+       
+        <div id="hud3" style='display:block; position:fixed;width:200px; height:205px;top:80%;left:-110%;z-index:999;
+     z-index:1;
+   
+  background-image:url("images/hud1.gif");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 5s ease-in-out;
+   -moz-transition: all 5s ease-in-out;
+   -o-transition: all 5s ease-in-out;
+   -ms-transition: all 5s ease-in-out;
+   transition: all 5s ease-in-out;
+       '> 
+       
+       </div>
+       
+          <div id="hud4" style='display:block; position:fixed;width:200px; height:205px;top:70%;left:110%;z-index:999;
+     z-index:1;
+  background-image:url("images/hud1.gif");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+      -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       </div>
+       
+       
+           <div id="btnMisil" style='display:block; position:fixed;width:56px; height:190px;top:70%;left:180%;z-index:999;
+     z-index:3;
+  background-image:url("images/btnmisil.gif");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+       -webkit-transition: all 2s ease-in-out;
+   -moz-transition: all 2s ease-in-out;
+   -o-transition: all 2s ease-in-out;
+   -ms-transition: all 5s ease-in-out;
+   transition: all 2s ease-in-out;
+   
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+       '> 
+       
+       </div>
+       
+       
+           <div id="btnNextlevel" style='display:block; position:fixed;width:97%; height:100%;top:-130%;left:2%;z-index:999;
+     z-index:7;
+  background-image:url("images/btnmisil.gif");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+       -webkit-transition: all 2s ease-in-out;
+   -moz-transition: all 2s ease-in-out;
+   -o-transition: all 2s ease-in-out;
+   -ms-transition: all 5s ease-in-out;
+   transition: all 2s ease-in-out;
+   
+       '> 
+    
+       
+       
+    <div id="titlelevel" style='display:block; position:absolute;width:100%; height:10%;top:70%;left:2%; font-size:75px; opacity:0.4;'>
+      <label id="lbtitle">finish</label>
+     </div>
+    
+    
+       </div>
+       
+       
+       
+          <div id="btnTw" style='display:block; position:fixed;width:80px; height:80px;top:80%;left:-122%;
+     z-index:7;
+  background-image:url("images/tw.png");
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+       -webkit-transition: all 2s ease-in-out;
+   -moz-transition: all 2s ease-in-out;
+   -o-transition: all 2s ease-in-out;
+   -ms-transition: all 5s ease-in-out;
+   transition: all 2s ease-in-out;
+   opacity:0.7;
+   padding-left:40px;
+       '> 
+       score
+       
+        </div>
+       
+
+     <div id="barravida" style="display:block; position:fixed;width:29px; height:0%;bottom:10%;left:0%;
+     z-index:2;
+    
+     
+   
+                 opacity:0.5;        
+                        
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+   
+      background-image:url('images/energiamover.png');
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+   
+   
+       "> 
+      
+       
+    
+       
+       </div>
+       
+                   <div id="barravida2" style="display:block; position:fixed;width:29px; height:70%;bottom:0%;left:0%;
+     z-index:1;
+    
+     
+   
+                         
+                        
+     
+   
+      background-image:url('images/energia.png');
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+   
+   
+       "> 
+      
+       
+    
+       
+       </div>
+            
+    
+       </div>
+   
+    
+        <div id="game">
+            
+            <div id="background"></div>
+            <div id="boss"></div>
+            <div id="player"></div>
+            
+            
+            <canvas id="world"></canvas>
+            
+            <div id="preloader">Loading</div>
+            
+            <div id="ui">
+                       
+        
+                <div class="panels">
+                    <div id="level-indicator"><span>Level</span></div>
+                    <div id="instructions"></div>
+                    <div id="logo"></div>
+                    <div id="logo2fin"></div>
+                    
+                    <a id="start-button" href="#"></a>
+                    
+                    <div id="score-ongoing">
+                        <span class="value"></span>
+                    </div>
+                    
+                    <div id="score-outcome">
+                        <h4>Your Score</h4>
+                        <span class="value"></span>
+                    </div>
+                    
+                    <div id="high-score">
+                        <h4>High Score</h4>
+                        <span class="value"></span>
+                    </div>
+                    
+                    <div id="level-selector">
+                        <ul id="level-selector-list">
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="mute-button"  style="" >
+                <a id="mute-button2" href="#"></a>
+                </div >
+                
+                <div id="pause-button">
+                <a id="pause-button2" href="#"></a>
+                </div >
+            </div>
+            <div id="cursor"></div>
+        </div>
+    
+        
+   
+        
+        <script type="text/javascript" src="js/jquery143.js"></script> 
+        <script type="text/javascript" src="js/tween.js"></script>
+        <script type="text/javascript" src="js/util.js"></script> 
+        <script type="text/javascript" src="js/gamedecierto.js"></script> 
+        <script type="text/javascript">
+               GameWorld.preload();
+            GameWorld.initialize();
+        </script>
+        
+<script language="Javascript">
+   document.oncontextmenu = function() {
+      return false
+   }
+   function right(e) {
+      
+      if (navigator.appName == 'Netscape' && e.which == 3) {
+         
+         return false;
+      }
+      else if (navigator.appName == 'Microsoft Internet Explorer' && event.button==2) {
+         
+      return false;
+      }
+   return true;
+}
+document.onmousedown = right;
+</script>
+    </body> 
+</html>
+
+

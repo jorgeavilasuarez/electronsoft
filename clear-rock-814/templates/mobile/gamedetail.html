@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width" />
+      <title>Responsive Online Store template</title>
+      <link rel="stylesheet" href="/static/site/css/components.css">
+      <link rel="stylesheet" href="/static/site/css/responsee.css">
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <script type="text/javascript" src="/static/site/js/jquery-1.8.3.min.js"></script>
+      <script type="text/javascript" src="/static/site/js/jquery-ui.min.js"></script>    
+      <script type="text/javascript" src="/static/site/js/modernizr.js"></script>
+      <script type="text/javascript" src="/static/site/js/responsee.js"></script>
+      <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+   </head>
+   <body class="size-1140">
+      <!-- HEADER -->
+      <header>
+        
+         <!-- TOP NAV -->  
+       
+      </header>
+      <!-- ASIDE NAV AND CONTENT -->
+      <div class="line">
+         <div class="box">
+            <div class="margin">
+               <!-- CONTENT -->
+               <section class="s-12 l-9 right">
+                  <h1>Fruit ninja</h1>
+                  <div class="margin">
+                     <div class="s-12 l-4">
+                           
+						<img src="/static/site/img/1.jpg">
+                 <!-- --><p class="margin-bottom">En las partidas de Fruit Ninja, el jugador debe deslizar sus dedos en la pantalla o utilizar el ratón para partir en trozos las frutas que aparecen. Cada fruta aparece volando durante un tiempo limitado; </p>
+                        
+                     </div>
+                    
+                  </div>
+               </section>
+               <!-- ASIDE NAV -->
+            
+            </div>
+         </div>
+      </div>
+
+	  <div id="btncircle" style="position:fixed; width:100%; height:50%; background-color:orange;  left:0px; bottom:-32%; border-radius:50%;
+	  
+	     background-size: 100% 100%, 0px 0px, auto auto;
+            background-image: url('/static/site/img/ajax_loader.gif');
+           background-repeat: no-repeat;
+		      border:solid 1px rgba(255, 255, 255, 0.25);
+	  
+	  "> 
+ <a href="categorydetail.html">
+	   <div id="btnback" style="position:fixed; width:45%; height:15%;  left:0px; bottom:0px;">
+	     
+	  <div id="iconback" style="position:fixed; width:48px; height:48px;  left:14%; bottom:5px;
+	              background-size: 100% 100%, 0px 0px, auto auto;
+            background-image: url('/static/site/img/back.png');
+           background-repeat: no-repeat;
+	  
+	  ">
+      </div>
+	  
+	</div>
+	</a>
+	  
+	 <div id="btninstall" style="  position:fixed; width:45%; height:15%;  right:0px; bottom:0px;">
+	    <div id="iconinstall" style="position:fixed; width:48px; height:48px;  right:14%; bottom:5px;
+	              background-size: 100% 100%, 0px 0px, auto auto;
+            background-image: url('/static/site/img/download.png');
+           background-repeat: no-repeat;
+	  
+	  ">
+	  </div>
+	</div>
+	  
+	  </div>
+	  
+	  
+	
+      <!-- FOOTER -->
+      <footer class="line">
+        
+      </footer>
+	  
+	   <script type="text/javascript">
+	
+         //window.location = "/static/site/index.html";
+		 function install(obj){
+		 debugger;
+		 if( window.navigator.mozApps !== "undefined"){
+		 if(obj.dataset.package_path === ""){		 
+		    window.navigator.mozApps.install(obj.dataset.manifest);
+		}else{
+		//window.navigator.mozApps.install(obj.dataset.manifest);
+		DOMApplicationsRegistry.installPackage(obj.dataset.package_path);
+		}
+			}
+		 }
+   </script>
+	  
+   </body>
+</html>

@@ -1,0 +1,9 @@
+CACHE MANIFEST
+# 2015-004-22:v3
+
+# Explicitly cached entries
+advanced/.*
+images/.*
+js/.*
+jsvideogame/.*
+stylosvideogame/.*

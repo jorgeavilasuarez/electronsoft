@@ -1,0 +1,41 @@
+CACHE MANIFEST
+# 2015-04-22:v3
+
+# Explicitly cached entries
+/favicon.ico
+index.html
+images/2.gif
+images/btnmisil.gif
+images/electronsoft.mp3
+images/energia.png
+images/energiamover.png
+images/estrellas.gif
+images/gameBoss.png
+images/gameover2.gif
+images/gamePlayer.png
+images/gameSprite.png
+images/go.ogg
+images/golpeshield.mp3
+images/hud1.gif
+images/intro.gif
+images/intro2.gif
+images/lazerdeath.mp3
+images/nave10.gif
+images/nave11.gif
+images/neblina.gif
+images/overlay.png
+images/sfinal.ogg
+images/sound2.mp3
+images/soundgame2.ogg
+images/soundmenu2.ogg
+images/stopdeath.mp3
+images/tw.png
+images/uiSprite.png
+js/gamedecierto.js
+js/jquery143.js
+js/sound.js
+js/swfobject.js
+js/tween.js
+js/util.js
+style/main.css
+style/reset.css

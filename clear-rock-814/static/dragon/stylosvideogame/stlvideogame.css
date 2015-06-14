@@ -1,0 +1,348 @@
+   
+	    
+ body
+{
+
+
+overflow:hidden;
+}
+          
+ 
+    	    #loading
+{
+
+        
+        
+       
+        display:none; position:absolute;width:100%; height:100%;top:0%;left:0%;z-index:0;
+
+
+  background-image:url("images/load.gif");
+
+  
+ 
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+   
+        
+
+}
+        
+        
+	    
+	    #game
+{
+
+        
+        
+       
+        display:block; position:absolute;width:100%; height:100%;top:0%;left:0%;z-index:4;
+
+ 
+ 
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+        
+        
+        
+        
+
+}
+	    #c
+{
+z-index:5;
+position:absolute;
+top:0px;
+left:0px; 
+width:100%;
+height:100%; 
+
+
+}
+
+ #protectorcortinalevel
+{
+display:none;
+position:absolute;
+width:100%; 
+height:100%;
+top:0px;left:0px;
+
+
+   z-index:9999;
+    background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+     
+        background-repeat:no-repeat; 
+        -webkit-transition: all 3s ease-in-out;
+   -moz-transition: all 3s ease-in-out;
+   -o-transition: all 3s ease-in-out;
+   -ms-transition: all 3s ease-in-out;
+   transition: all 3s ease-in-out;
+   
+  
+    }
+	
+          
+  #protectorcortinapause
+{
+display:none;
+position:absolute;
+width:100%; 
+height:100%;
+top:0px;left:0px;
+
+
+   z-index:99999;
+    background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+     
+        background-repeat:no-repeat; 
+        -webkit-transition: all 3s ease-in-out;
+   -moz-transition: all 3s ease-in-out;
+   -o-transition: all 3s ease-in-out;
+   -ms-transition: all 3s ease-in-out;
+   transition: all 3s ease-in-out;
+   
+  
+    }         
+
+ #protectorcortina
+{
+display:block;
+position:absolute;
+width:100%; 
+height:100%;
+top:0px;left:0px;
+
+
+   z-index:9999;
+    background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+     
+        background-repeat:no-repeat; 
+        -webkit-transition: all 3s ease-in-out;
+   -moz-transition: all 3s ease-in-out;
+   -o-transition: all 3s ease-in-out;
+   -ms-transition: all 3s ease-in-out;
+   transition: all 3s ease-in-out;
+   
+  
+    }
+	
+	#protectorcortinastart
+{
+display:none;
+position:absolute;
+width:100%; 
+height:100%;
+top:0px;left:0px;
+
+
+   z-index:99999;
+    background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+     
+        background-repeat:no-repeat; 
+        -webkit-transition: all 3s ease-in-out;
+   -moz-transition: all 3s ease-in-out;
+   -o-transition: all 3s ease-in-out;
+   -ms-transition: all 3s ease-in-out;
+   transition: all 3s ease-in-out;
+   
+   
+  
+    }
+	
+	 #protectorcortinagameover
+{
+display:none;
+position:absolute;
+width:100%; 
+height:100%;
+top:0px;left:0px;
+
+
+   z-index:99999;
+    background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+     
+        background-repeat:no-repeat; 
+        -webkit-transition: all 3s ease-in-out;
+   -moz-transition: all 3s ease-in-out;
+   -o-transition: all 3s ease-in-out;
+   -ms-transition: all 3s ease-in-out;
+   transition: all 3s ease-in-out;
+
+  
+    }
+	
+	
+ #menu
+{
+display:block;
+position:absolute;
+width:100%; 
+height:100%;
+top:0px;left:0px;
+
+
+   z-index:9999;
+    background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+     
+        background-repeat:no-repeat; 
+        -webkit-transition: all 3s ease-in-out;
+   -moz-transition: all 3s ease-in-out;
+   -o-transition: all 3s ease-in-out;
+   -ms-transition: all 3s ease-in-out;
+   transition: all 3s ease-in-out;
+   
+  
+    }
+	
+	 #btnstart
+{
+display:block;
+position:absolute;
+width:30%; 
+height:10%;
+top:40%;left:30%;
+
+
+   z-index:9999;
+    background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+     
+        background-repeat:no-repeat; 
+   
+   
+  
+    }
+	
+	 #msglevel
+{
+display:block;
+position:absolute;
+width:30%; 
+height:10%;
+top:15%;left:-30%;
+
+
+   z-index:9999;
+    background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+     
+        background-repeat:no-repeat; 
+		
+		
+        -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+   
+  
+    }
+          
+          
+           #msglevelcomplete
+{
+display:block;
+position:absolute;
+width:50%; 
+height:10%;
+top:35%;left:-50%;
+
+
+   z-index:9999;
+    background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+     
+        background-repeat:no-repeat; 
+		
+		
+        -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+   
+  
+    }
+          
+          
+                  #btnmsglevelcomplete
+{
+display:block;
+position:absolute;
+width:30%; 
+height:10%;
+top:50%;left:-30%;
+   z-index:9999;
+    background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+   
+        background-repeat:no-repeat; 
+		
+		
+        -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+   
+  
+    }
+	
+
+	#splashlogocompany
+{
+
+
+display:none;
+z-index:99999;
+ position: fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%; 
+  
+ 
+background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;    
+      background-repeat:no-repeat;
+
+}
+
+#gamescreen
+{
+
+display:none;
+
+}
+	
+	

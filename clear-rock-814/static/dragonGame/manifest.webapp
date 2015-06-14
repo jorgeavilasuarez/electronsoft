@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "name": "dragon",   
+  "description": "enjoy an adventure with dragon several levels with different ways to pass and come and live successfully, more adventures soon more levels",
+  "launch_path": "/index.html",
+  "icons": {
+    "22": "/icons/tyrian-22.png",
+    "24": "/icons/tyrian-24.png",
+    "32": "/icons/tyrian-32.png",
+    "60": "/icons/tyrian-60.png",        
+    "128": "/icons/tyrian-128.png"    
+  },  
+  "type": "web",
+  "permissions": {    
+    "audio-channel-content":{
+		"description":"Use the audio channel for the music player"
+	},
+    "audio-channel-normal":{
+		"description":"Use the audio channel for the music player"
+	}    
+  },  
+  "orientation": "landscape-primary",
+  "fullscreen": "true",
+  "developer": {
+    "name": "Electronsoft",
+    "url": "https://www.electronsoft.com"
+  },
+  "installs_allowed_from": ["*"],  
+  "locales": {
+    "es": {
+      "description": "disfruta toda  una aventura con dragon  ,varios niveles con diferentes maneras de pasar y llegar  con exito y con vida, muy pronto mas aventuras mas niveles ",
+      "developer": {
+        "url": "https://www.electronsoft.com"
+      }
+    },
+    "en": {
+      "description": "enjoy an adventure with dragon several levels with different ways to pass and come and live successfully, more adventures soon more levels",
+      "developer": {
+        "url": "https://www.electronsoft.com"
+      }
+    }
+  },
+  "default_locale": "en"
+}

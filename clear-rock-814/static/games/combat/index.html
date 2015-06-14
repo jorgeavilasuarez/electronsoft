@@ -1,0 +1,1088 @@
+<!DOCTYPE html> 
+<html lang="en" manifest="manifest.appcache"> 
+	
+    <head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<meta name="description" content="" /> 
+		<meta name="keywords" content="" /> 
+		<meta name="author" content="asikersoft" /> 
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    
+	   
+	    <meta http-equiv="X-UA-Compatible" content="chrome=1" /> 
+	       <!---
+
+          DANGER!!!
+
+
+        __author__ = "electronsoft.com"
+        __copyright__ = "Copyright 2015,"
+        __license__ = "Affero GPL"
+        __version__ = "1.0.1"
+        __maintainer__ = "team electronsoft"
+        __contact__ = "electronsoft.com"
+        __status__ = "Production"
+
+        
+        --->
+	    
+<script type="text/javascript" src="js/PxLoader.js"></script>
+
+<!-- images --> 
+<script type="text/javascript" src="js/PxLoaderImage.js"></script> 
+
+    
+        
+        
+     
+	    <style>
+	    
+	    
+body
+{
+
+
+
+overflow:hidden;
+}
+	  
+          
+          
+ #loading
+{
+
+        
+        
+       
+display:block; position:absolute;width:100%; height:100%;top:0%;left:0%;z-index:0;
+
+
+  background-image:url("images/load.gif");
+
+  
+ 
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+  
+}    
+          
+          
+          
+	    #game
+{
+
+        
+        
+        
+        display:block; position:absolute;width:100%; height:100%;top:0%;left:0%;z-index:4;
+    
+   
+ 
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+        
+        
+        
+        
+
+}
+	    #c
+{
+z-index:5;
+position:absolute;
+top:0px;
+left:0px; 
+width:100%;
+height:100%; 
+
+        background-repeat:no-repeat;
+
+}
+
+
+			
+#splashlogocompany
+{
+
+
+display:block;
+z-index:99999;
+ position: fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%; 
+background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;          
+     
+      background-repeat:no-repeat;
+
+}
+
+#gamescreen
+{
+
+display:none;
+
+}
+
+
+
+	    </style>
+	    
+        <title>Combat</title>
+	
+		<script type="text/javascript">
+        
+        
+                           
+var loader = new PxLoader(), 
+    logoimg = loader.addImage('images/2.gif'),
+    fondoimg = loader.addImage('images/decierto.gif'), 
+   
+ bunimg = loader.addImage('images/bun.gif'),
+    nave11img = loader.addImage('images/nave11.gif'), 
+    
+    transporteimg = loader.addImage('images/transporte.gif'),
+    player1img = loader.addImage('images/player1.gif'), 
+    
+  nave2img = loader.addImage('images/nave2.gif'),
+    nave8img = loader.addImage('images/nave8.gif'),
+    
+    hud1img = loader.addImage('images/hud1.gif'),
+    nave8img = loader.addImage('images/nave8.gif'),
+    
+     overlayimg = loader.addImage('images/overlay.png');
+
+    
+    
+loader.addCompletionListener(function() { 
+    	 sound1.src="images/electronsoft.mp3";
+    sound1.play();
+      
+   loading.style.display="none";
+    splashlogocompany.style.backgroundImage ='url('+logoimg.src +')';
+    game.style.backgroundImage = 'url('+fondoimg.src +')'; 
+   
+	   pantabun.style.backgroundImage = 'url('+bunimg.src +')';
+    
+    pantaactor1avioneta.style.backgroundImage = 'url('+nave11img.src +')';   
+    
+       transportelevel.style.backgroundImage = 'url('+transporteimg.src +')';  
+       player1.style.backgroundImage = 'url('+player1img.src +')';   
+       
+       pantaactor2.style.backgroundImage = 'url('+nave2img.src +')';   
+    pantaactor3.style.backgroundImage = 'url('+nave8img.src +')';    
+    
+      hud1.style.backgroundImage = 'url('+hud1img.src +')';  
+        hudcontinue.style.backgroundImage = 'url('+hud1img.src +')';
+     hudBonusmensaje2.style.backgroundImage = 'url('+overlayimg.src +')';  
+    
+    
+	 var  splashlogoco = setInterval(function () {
+	
+
+	
+gamescreen.style.display = "block";
+   
+  splashlogocompany.style.display = "none";
+
+     clearInterval(splashlogoco);
+
+    }, 3000);
+	
+	 var  gamescreenintro = setInterval(function () {
+	 
+	 
+	
+		 var intromusicaincio = setInterval(function () {
+          sound1.src="images/soundmenu2.mp3";
+			sound1.play();
+        
+            
+            
+            clearInterval(intromusicaincio);
+        }, 300);
+        
+		
+		
+        
+       
+        
+         var introc26 = setInterval(function () {
+         
+        
+        transportelevel.style.left="0px";
+        
+        
+           game.style.left = "0px";
+           
+           pantabun.style.display = "block";
+             
+           
+            clearInterval(introc26);
+        }, 2000);
+        
+          var introc27 = setInterval(function () {
+           player1.style.left = "30%";
+           transportelevel.style.top="-110%";
+          
+       
+           pantabun.style.display = "none";
+           
+           pantaactor2.style.left = "50%";
+            clearInterval(introc27);
+        }, 4500);
+        
+        
+          var introc28 = setInterval(function () {
+       
+         // player1.style.left = "150%";
+           pantaactor3.style.left = "150%";
+           pantaactor2.style.top = "-150%";
+           
+           
+      
+         
+        
+         
+            clearInterval(introc28);
+        }, 6500);
+        
+        
+            var introc29 = setInterval(function () {
+       
+	   hudBonusmensaje2.style.zIndex="7";
+	    hudBonusmensaje2.style.opacity="0.6";
+	  
+           btnleft.style.display = "block";
+           btnright.style.display = "block";
+           btnfire.style.display = "block";
+           
+         sound1.src="images/soundgame2.mp3";
+         sound1.play();
+		 
+		 pantaactor1avioneta.style.display="block";
+         
+         rungame();
+         
+            clearInterval(introc29);
+        }, 9500);
+		
+		
+		
+		
+		      clearInterval(gamescreenintro);
+        }, 3100);
+		
+		
+		 }); 
+ 
+// begin downloading images 
+loader.start(); 
+        
+        
+        
+		</script>
+    </head> 
+    <body>
+    <audio preload="true" id="sound1" autoplay="autoplay" loop="loop" >
+	<source src="images/electronsoft.mp3" />
+</audio>
+
+
+<audio preload="true" id="stopdeath"  >
+	<source src="images/stopdeath.mp3" />
+</audio>
+<!--golpe enemigo---->
+<audio preload="true" id="golpeshield"  >
+	<source src="images/golpeshield.mp3" />
+</audio>
+
+
+       <div id="splashlogocompany" >
+</div>
+        
+        <div id="loading" >
+	    </div> 
+
+
+<div id="gamescreen">
+      
+        <img id="imgenemigo" src="images/hud1.gif" alt="Smiley face" height="20" width="20"> 
+      
+       
+          <div id="pantabun" style='display:none; position:fixed;width:100%; height:100%;top:0px;left:0px;z-index:99;
+     
+   
+ 
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       </div>
+       
+     
+    
+       
+   
+    
+       
+       
+       
+           <div id="transportelevel" style='display:block; position:fixed;width:100%; height:100%;top:0px;left:-110%;
+     z-index:7;
+  
+ 
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       </div>
+     
+         <div id="pantaactor1avioneta" style='display:none; position:fixed;width:165%; height:100%;top:0px;left:-65%;z-index:7;
+ 
+   
+
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       </div>
+       
+       
+       
+       
+            <div id="player1" style='display:block; position:fixed;width:40%; height:30%;top:70%;left:-130%;;
+     z-index:6;
+   /*nave 11 hgenial avioneta cae
+   nave 12
+   nave volando como para qterrizar
+   */
+ 
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+      
+       '> 
+       
+       </div>
+       
+       
+          
+           
+       
+       
+        
+       
+       
+       
+       
+        <div id="pantaactor2" style='display:block; position:fixed;width:208px; height:275px;top:40%;left:-110%;
+    z-index:5;
+   
+
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       </div>
+       
+       
+       <div id="pantaactor3" style='display:block; position:fixed;width:300px; height:300px;top:35%;left:-110%;
+     z-index:5;
+   
+
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+                         
+       -webkit-transition: all 5s ease-in-out;
+   -moz-transition: all 5s ease-in-out;
+   -o-transition: all 5s ease-in-out;
+   -ms-transition: all 5s ease-in-out;
+   transition: all 5s ease-in-out;
+       '> 
+       </div>
+     
+       
+        <div id="hud1" style='display:block; position:fixed;width:100px; height:100px;top:40%;left:-110%;
+     z-index:10;
+   
+ 
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+          -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       
+       
+       </div>
+       
+          <div id="btnleft" style='display:none; position:fixed;width:50%; height:100%;top:0%;left:0%;
+     z-index:9;
+     background-color:white;
+     
+      padding-top:50%;
+
+  
+   opacity:0.5;
+
+          -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+   
+   font-size:55px;
+       '> 
+       
+       left
+       
+       </div>
+       
+          <div id="btnright" style='display:none; position:fixed;width:50%; height:100%;top:0%;left:50%;
+     z-index:9;
+     background-color:black;
+     color:white;
+     
+      padding-top:50%;
+
+  
+   opacity:0.5;
+
+          -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+   
+    font-size:55px;
+       '> 
+       
+       right
+       
+       </div>
+       
+       
+       
+       
+        <div id="btnfire" style='
+        
+       display: none; position: fixed; width: 30px; height: 40px; z-index: 9; background-color: orange; border-radius: 100px; box-shadow: 10px 10px 5px rgb(136, 136, 136); padding-left: 50px; opacity: 0.5;  bottom: 3%; padding-top: 50px; right: 38%;
+COLOR:white;
+        
+       '> 
+       
+       fire
+       
+       </div>
+       
+       
+       
+          
+        <div id="hud1mensaje" style='display:block; position:fixed;width:100px; height:20px;top:60%;left:-110%;
+     z-index:10;
+     background-color:white;
+      border-radius: 25px;
+      box-shadow: 10px 10px 5px #888888;
+   padding-left:50px;
+   opacity:0.8;
+
+          -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       escape
+       
+       </div>
+      
+       
+              <div id="hudcontinue" style='display:block; position:fixed;width:100px; height:100px;top:10%;left:-150%;
+     z-index:10;
+   
+
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+          -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       
+       
+       </div>
+       
+          
+        <div id="hud1continuemensaje" style='display:block; position:fixed;width:100px; height:20px;top:30%;left:-150%;
+     z-index:10;
+     background-color:white;
+      border-radius: 25px;
+      box-shadow: 10px 10px 5px #888888;
+   padding-left:50px;
+   opacity:0.8;
+
+          -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       continue
+       
+       </div>
+       
+       
+        <div id="hudBonusmensaje" style='display:block; position:fixed;width:70px; height:20px;top:1%;right:0%;
+     z-index:10;
+     background-color:white;
+      border-radius: 25px;
+      box-shadow: 10px 10px 5px #888888;
+   padding-left:20px;
+   opacity:0.8;
+
+          -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       pause
+     
+       </div>
+      
+          <div id="hudBonusmensaje2" style='display:block; position:fixed;width:100%; height:100%;top:0%;left:0%;
+     z-index:8;
+    
+  
+     
+   
+ 
+  opacity:0.7;
+ 
+   
+   
+      background-repeat:no-repeat;
+  background-size:     100% 100%,
+                        0px 0px,
+                         auto auto ;
+   
+   
+    
+
+          -webkit-transition: all 2s ease-in-out;
+   -moz-transition: all 2s ease-in-out;
+   -o-transition: all 2s ease-in-out;
+   -ms-transition: all 2s ease-in-out;
+   transition: all 2s ease-in-out;
+       '> 
+       
+   
+     
+       </div>
+       
+       
+       
+       
+       <div id="hudlevelmensaje" style='display:block; position:fixed;width:70px; height:20px;top:1%;left:0%;
+     z-index:9;
+     background-color:white;
+      border-radius: 25px;
+      box-shadow: 10px 10px 5px #888888;
+   padding-left:20px;
+   opacity:0.8;
+
+          -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   -ms-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+       '> 
+       
+       level:
+       <label id="lblevel">1
+       
+       </label>
+       </div>
+       
+       
+       
+       
+    
+  
+    	<div id="game" style="display:block;" >
+	    	
+	    	<div id="background"></div>
+			<div id="boss"></div>
+			<div id="player"></div>
+			
+			<!-- The canvas element that the game is rendered on -->
+			<canvas id="c"></canvas>
+			
+			
+			
+			<div id="ui">
+		
+			
+			
+				
+			
+				
+				
+				
+				
+			</div>
+			
+		</div>
+		
+		</div>
+		
+		
+		<script type="text/javascript">
+			
+
+ 
+			var b = document.body;
+			var c = document.getElementsByTagName('canvas')[0];
+			var a = c.getContext('2d');
+			document.body.clientWidth; 
+	
+
+var enemigo=document.getElementById("imgenemigo");
+var enemigopoder=document.getElementById("imgpoder1");
+
+
+var runplay=0;
+u = document;
+c = u.getElementById('c');
+M = Math;
+W = H = c.width = c.height = 420;
+A = 35;
+B = 25;
+I = [];	
+F = [];		
+v = 1;		
+U = Z = l = k = o = 0;
+t = 100;
+
+var pausegame= true; 
+
+function rungame(){
+
+
+
+
+ runplay  =setInterval(function() { 
+ 
+ if(pausegame === true){
+debugger
+ 
+	with(s = c.getContext('2d')) {
+	
+	
+		s.E = fillRect;
+		s.T = fillText;
+		// clearscreen	
+		fillStyle = 'transparent';
+		E(0,0,W,H);	
+		fillStyle = 'red';
+		clearRect(0,0,W,H);
+		
+		document.getElementById("lblevel").innerHTML= l;
+		// if we are not dead
+		if (!k){
+			// and have some invaders
+			if (I.length) {
+			
+				player1.style.left= t-100+"px";
+				// reset max and min x;
+				J = 0;
+				K = W;
+				// draw turet
+				//E(t,H-8,A,8);
+				//E(t+15,H-12,5,5);
+				// draw fire
+				j = F.length;
+				while (j--)
+					with (F[j])
+						(y>0) ? E(x,y-=5,3,7) : F.splice(j,1);									
+				// draw bomb
+				fillStyle = 'transparent';
+				(Z<H && U>0) ?  E(U -= 5*M.cos(U),Z+=3,5,5) :  U=Z=0 ;
+				// move invaders
+				i = I.length;				
+				while (i--) 	 
+					with (I[i]) {	
+						// draw
+						w = y+o;  
+						
+						z=0;
+						a.drawImage(enemigo,x+5, w+5,50,20);
+						while(z++<A) {						
+						if ('00111111111010110100011001010011111'.charAt(z)|0) E(x+5*(z%7),w+5*(z%5),2,5);
+							  
+                                             // a.drawImage(enemigo,x+5, w+5,30,20);
+                                           //  a.drawImage(enemigo,x+5*(z%7), w+5*(z%5),20,20);
+							
+						}			
+						// update position
+						x += v*(M.log(l+1)+1/I.length);												
+						// player dies when invaders reach earth or turet gots hit by bomb
+						if ((w+B>H-13) || (Z==H && U>t && U<t+A)) k = 1;
+						// colission with fire						
+						j = F.length;						
+						while (j--)
+							if ((F[j].x>x && F[j].x<x+A) && (F[j].y>w && F[j].y<w+B)) {								
+								F.splice(j,1);
+								I.splice(i,1);
+								if (U==0) U = t+9;
+							}
+						if (x>J) J=x;
+						if (x<K) K=x;
+					}				
+				// pingpong invaders
+				if (J>W-A || K<0) {
+					v = -v;
+					o += 4;						
+				}							
+			}
+			// if there are no invaders 
+			else {
+				// create invaders
+				j = 56;
+				while(j--)
+					I.push({x:60*(j%7),y:A*(j%8)+9});
+				// start from the top
+				o = 0;
+				// on a faster level
+				l++;
+			}
+		}
+		// if we are dead
+		else {
+			// game over :)
+			T('GAME OVER',W/2-A,H/2);
+			pantaactor1avioneta.style.display ="none";
+			
+			clearInterval(runplay);
+			
+			btnfire.style.display="none";
+			
+			
+			sound1.src="images/sound2.mp3";
+			sound1.play();
+			
+			 player1.style.transform ="rotate(180deg)";
+						    
+				 player1.style.left ="50%";		     
+						   // pantagameover.style.display = "block";
+						 
+						    
+						      
+						     
+							  
+						   
+						    hud1.style.left="10%";
+			hud1mensaje.style.left="10%";
+			
+			hudcontinue.style.left="50%";
+			hud1continuemensaje.style.left="50%";
+			
+			
+						    
+						   
+				 var intromusica5 = setInterval(function () {
+           transportelevel.style.top = "0%";
+            
+            
+            clearInterval(intromusica5);
+        }, 10);
+			
+			
+			
+			
+		}
+	}
+	
+	}
+},1); 
+
+
+
+
+
+}
+
+// Controlls
+u.onkeydown = function(event) {
+	switch (event.keyCode) {
+	
+		// arrow left   -> move turet left
+		case 37:				
+			debugger
+			t -= A;
+			break;
+		// arrow right  -> move turet right
+		case 39:	
+		debugger
+			t += A;
+			break;
+		// space -> fire
+		case 32:				
+			(F.length<4) && F.push({x:t+17,y:H});
+			stopdeath.play();
+			
+			break;
+		// arrow up -> more speed						
+		case 38:				
+			l++;
+			break;		
+	}
+}
+
+
+
+document.getElementById("btnleft").addEventListener("click", function (e) {
+
+  
+       t -= A;
+	     btnleft.style.opacity ="0.0";
+        
+}, false);
+
+
+
+
+
+
+document.getElementById("btnright").addEventListener("click", function (e) {
+
+
+     
+       t += A;
+	   
+	    btnright.style.opacity ="0.0";
+      
+}, false);
+
+
+
+
+document.getElementById("hudBonusmensaje").addEventListener("click", function (e) {
+
+	  
+	  if(!pausegame){
+	   pausegame = true;
+	
+	  }else{
+	   pausegame = false;
+	
+	   
+	  }
+	  
+}, false);
+
+
+document.getElementById("btnfire").addEventListener("click", function (e) {
+btnfire.style.backgroundColor="red";
+
+(F.length<4) && F.push({x:t+17,y:H});
+			stopdeath.play();
+      
+}, false);
+
+document.getElementById("btnfire").addEventListener("touchstart", function (e) {
+btnfire.style.backgroundColor="red";
+
+(F.length<4) && F.push({x:t+17,y:H});
+			stopdeath.play();
+      
+}, false);
+
+document.getElementById("btnfire").addEventListener("touchend", function (e) {
+
+
+btnfire.style.backgroundColor="orange";      
+}, false);
+
+
+document.getElementById("hud1mensaje").addEventListener("touchstart", function () {
+
+hudcontinue.style.left="-150%";
+			hud1continuemensaje.style.left="-150%";
+			
+			    hud1.style.left="-110%";
+			hud1mensaje.style.left="-110%";
+
+
+
+var introclevel = setInterval(function () {
+		      
+				//location.href="leveldecierto.html";
+			transportelevel.style.left="0px";
+			    clearInterval(introclevel);
+			}, 500);
+			 
+			  var introclevel2 = setInterval(function () {
+		      
+			
+			transportelevel.style.top="50%";
+			player1.style.display="none";
+			
+			    clearInterval(introclevel2);
+			}, 2500);
+			  
+			   var introclevel3 = setInterval(function () {
+		      
+			
+			transportelevel.style.top="-150%";
+			
+			    clearInterval(introclevel3);
+			}, 3500);
+			   
+			    var introclevel4 = setInterval(function () {
+		      
+			location.href="levellluvia.html";
+		
+			
+			    clearInterval(introclevel4);
+			}, 4500);
+
+
+     
+}, false);
+
+document.getElementById("hud1continuemensaje").addEventListener("click", function () {
+
+hudcontinue.style.left="-150%";
+			hud1continuemensaje.style.left="-150%";
+			
+			    hud1.style.left="-110%";
+			hud1mensaje.style.left="-110%";
+
+
+
+var introclevel2 = setInterval(function () {
+		      
+			
+			transportelevel.style.left="0px";
+			    clearInterval(introclevel2);
+			}, 500);
+			 
+			  var introclevel22 = setInterval(function () {
+		     
+			transportelevel.style.top="50%";
+			player1.style.display="none";
+			
+			    clearInterval(introclevel22);
+			}, 2500);
+			  
+			   var introclevel32 = setInterval(function () {
+		      
+				
+			transportelevel.style.top="-150%";
+			
+			    clearInterval(introclevel32);
+			}, 3500);
+			   
+			    var introclevel42 = setInterval(function () {
+		
+		location.reload();
+			
+			    clearInterval(introclevel42);
+			}, 4500);
+     
+}, false)
+
+
+
+
+   sound1.src="";
+			
+		</script>
+		
+		<script language="Javascript">
+   document.oncontextmenu = function() {
+      return false
+   }
+   function right(e) {
+      
+      if (navigator.appName == 'Netscape' && e.which == 3) {
+         
+         return false;
+      }
+      else if (navigator.appName == 'Microsoft Internet Explorer' && event.button==2) {
+         
+      return false;
+      }
+   return true;
+}
+document.onmousedown = right;
+</script>
+		
+    </body> 
+</html>
+
+

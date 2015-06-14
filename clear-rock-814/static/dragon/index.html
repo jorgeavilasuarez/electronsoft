@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />        
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>IMA HTML5 SDK Advanced Demo</title>
+	<style type="text/css">
+	#mainContainer {
+		position: relative;
+		width: 640px;
+		height: 480px;
+	}
+
+	#content, #adContainer {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 640px;
+		height: 480px;
+	}
+	</style>
+	  
+  <script type="text/javascript" src="http://s0.2mdn.net/instream/html5/ima3_debug.js"></script>
+  
+  
+
+  </head>
+  <body>
+  
+  
+<div id="mainContainer">
+  <div id="content">
+    <video id="contentElement" style="width:640px; height:480px;"/>
+  </div>  
+  <div id="adContainer">
+  </div>  
+</div>
+
+<script type="text/javascript">
+    var adsManager;
+  var adsLoader;
+  var adDisplayContainer;
+  var intervalTimer;
+
+  var videoContent = document.getElementById('contentElement');
+
+  function createAdDisplayContainer() {
+    // Suponemos que adContainer es el ID de DOM del elemento que acogerá
+    // los anuncios.
+    adDisplayContainer =
+        new google.ima.AdDisplayContainer(document.getElementById('adContainer'));
+  }
+
+  function requestAds() {
+    // Crear el contenedor de visualización del anuncio.
+    createAdDisplayContainer();
+    // Inicializar el contenedor si se invoca requestAds en un acción del usuario.
+    // Este paso solo es necesario en dispositivos con iOS o Android.
+    adDisplayContainer.initialize();
+    // Crear un cargador de anuncios.
+    adsLoader = new google.ima.AdsLoader(adDisplayContainer);
+    // Procesar eventos de error y del cargador de eventos, y darles una respuesta.
+    adsLoader.addEventListener(
+        google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED,
+        onAdsManagerLoaded,
+        false);
+    adsLoader.addEventListener(
+        google.ima.AdErrorEvent.Type.AD_ERROR,
+        onAdError,
+        false);
+
+    // Solicitar de anuncios de vídeo.
+    var adsRequest = new google.ima.AdsRequest();
+    adsRequest.adTagUrl = 'http://googleads.g.doubleclick.net/pagead/ads?ad_type=skippablevideo&client=ca-games-pub-4968145218643279&videoad_start_delay=0&description_url=http%3A%2F%2Fwww.google.com&max_ad_duration=40000&adtest=on';
+	//adsRequest.adTagUrl = 'http://googleads.g.doubleclick.net/pagead/ads?client=ca-video-pub-4042043944983761&ad_type=text&description_url=http%3A%2F%2Fexample.com%2Fpage%3Fkey%3Dvalue%26key2%3Dvalue2';
+
+    // Especificar tamaños de espacios para anuncios lineales y no lineales. Esto ayuda al SDK a 
+    // seleccionar la creatividad correcta si se devuelven varias.
+    adsRequest.linearAdSlotWidth = 640;
+    adsRequest.linearAdSlotHeight = 400;
+
+    adsRequest.nonLinearAdSlotWidth = 640;
+    adsRequest.nonLinearAdSlotHeight = 150;
+
+    adsLoader.requestAds(adsRequest);
+  }
+
+  function onAdsManagerLoaded(adsManagerLoadedEvent) {
+    // Obtener el administrador de anuncios.
+    adsManager = adsManagerLoadedEvent.getAdsManager(
+        videoContent);  // debe definirse en el elemento de vídeo del contenido.
+
+    // Añadir procesadores a los eventos obligatorios.
+    adsManager.addEventListener(
+        google.ima.AdErrorEvent.Type.AD_ERROR,
+        onAdError);
+    adsManager.addEventListener(
+        google.ima.AdEvent.Type.CONTENT_PAUSE_REQUESTED,
+        onContentPauseRequested);
+    adsManager.addEventListener(
+        google.ima.AdEvent.Type.CONTENT_RESUME_REQUESTED,
+        onContentResumeRequested);
+    adsManager.addEventListener(
+        google.ima.AdEvent.Type.ALL_ADS_COMPLETED,
+        onAdEvent);
+
+    // Procesar eventos adicionales (si resulta necesario).
+    adsManager.addEventListener(
+        google.ima.AdEvent.Type.LOADED,
+        onAdEvent);
+    adsManager.addEventListener(
+        google.ima.AdEvent.Type.STARTED,
+        onAdEvent);
+    adsManager.addEventListener(
+        google.ima.AdEvent.Type.COMPLETE,
+        onAdEvent);
+
+    try {
+	//debugger;
+	
+      // Inicializar el administrador de anuncios. La lista de reproducción de reglas de anuncios se iniciará en este momento.
+      adsManager.init(640, 480, google.ima.ViewMode.NORMAL);
+      // Invocar el evento de reproducción para iniciar la visualización del anuncio. Los anuncios de vídeo y superposición únicos
+      // se iniciarán en este momento; la invocación se ignorará para las reglas de anuncios.
+      adsManager.start();
+    } catch (adError) {
+      // Es posible que se genere un error si existe un problema con la respuesta de VAST.
+    }
+  }
+
+  function onAdEvent(adEvent) {
+    // Recuperar el anuncio del evento. Algunos eventos (p. ej. ALL_ADS_COMPLETED)
+    // no cuentan con objetos de anuncios asociados.
+    var ad = adEvent.getAd();
+    switch (adEvent.type) {
+      case google.ima.AdEvent.Type.LOADED:
+        // Este es el primer evento enviado para un anuncio; es posible 
+        // determinar si el anuncio es de vídeo o de superposición.
+        if (!ad.isLinear()) {
+          // Colocar AdDisplayContainer correctamente para la superposición.
+          // Utilizar ad.width y ad.height.
+        }
+        break;
+      case google.ima.AdEvent.Type.STARTED:
+        // Este evento indica que el anuncio se ha iniciado; el reproductor de vídeo
+        // puede ajustar la interfaz de usuario, por ejemplo, mostrar un botón de detención y
+        // el tiempo restante.
+        if (ad.isLinear()) {
+          // En el caso de anuncios lineales, puede iniciarse un temporizador para realizar un sondeo del
+          // tiempo restante.
+          intervalTimer = setInterval(
+              function() {
+                var remainingTime = adsManager.getRemainingTime();
+              },
+              300); // Cada 300 milésimas de segundo
+        }
+        break;
+      case google.ima.AdEvent.Type.COMPLETE:
+        // Este evento indica que el anuncio ha finalizado; el reproductor de vídeo
+        // puede realizar las acciones apropiadas de la interfaz de usuario, como suprimir el temporizador para
+        // detectar el tiempo restante.
+        if (ad.isLinear()) {
+          clearInterval(intervalTimer);
+        }
+        break;
+    }
+  }
+
+  function onAdError(adErrorEvent) {
+    // Gestionar el registro de errores.
+    console.log(adErrorEvent.getError());
+  }
+
+  function onContentPauseRequested() {
+    videoContent.pause();
+    // Esta es la función en la que debe configurar la interfaz de usuario de modo que muestre anuncios (p. ej.,
+    // mostrar la función de cuenta atrás del anuncio, inhabilitar las búsquedas, etc.).
+    // setupUIForAds();
+  }
+
+  function onContentResumeRequested() {
+    videoContent.play();
+    // Esta es la función en la que debe asegurarse de que su interfaz de usuario está preparada
+    // para reproducir contenido. Es responsabilidad del editor
+    // implementar esta función cuando sea necesario.
+    // setupUIForContent();
+
+  }
+
+  // Presentar la solicitud de anuncios.
+  requestAds();
+
+</script>  
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+CACHE MANIFEST
+# 2015-04-22:v3
+
+# Explicitly cached entries
+/favicon.ico
+index.html
+images/2.gif
+images/bun.gif
+images/decierto.gif
+images/electronsoft.mp3
+images/golpeshield.mp3
+images/hud1.gif
+images/load.gif
+images/nave11.gif
+images/nave2.gif
+images/nave8.gif
+images/overlay.png
+images/player1.gif
+images/sfinal.ogg
+images/sound2.mp3
+images/soundgame2.mp3
+images/soundmenu2.mp3
+images/stopdeath.mp3
+images/transporte.gif
+js/gruntfile.js
+js/package.json
+js/pxloader.externs.js
+js/PxLoader.js
+js/PxLoaderImage.js
